@@ -1,0 +1,60 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+@use '../abstracts/common' as *;
+
+
+/*
+************
+*************************
+25. error
+******************************************************* 
+*************************************************************** */
+
+// error page
+
+.error-page-big-title {
+    h1 {
+        font-size: 400px;
+        line-height: 1;
+        color: var(--font_gray);
+        @media #{$xs} {
+            font-size: 140px;
+        }
+        @media #{$sm} {
+            font-size: 270px;
+        }
+    }
+}
+.ac-error-page-search {
+    .search-form {
+        position: relative;
+        display: inline-block;
+        input {
+            font-size: 16px;
+            outline: none;
+            border: 1px solid #ccc;
+            width: 270px;
+            padding: 10px 50px 10px 10px;
+
+            &::placeholder{
+                color: var(--font_gray);
+            }
+        }
+        button {
+            border: none;
+            background-color: #ccc;
+            width: 40px;
+            height: 45px;
+            position: absolute;
+            right: 0px;
+            text-align: center;
+            line-height: 45px;
+            color: var(--theme_color);
+            @include transition(.3s);
+            &:hover {
+                color: var(--yollow_color);
+                background-color: var(--theme_color);
+            }
+        }
+    }
+}

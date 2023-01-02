@@ -1,0 +1,171 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+@use '../abstracts/common' as *;
+
+/*
+************
+*************************
+10. work process
+******************************************************* 
+*************************************************************** */
+
+// work-process  
+
+.ac-work-process-area {
+    position: relative;
+}
+.ac-work-process-bg-shape-wrapper {
+    position: absolute;
+    left: 0;
+    bottom: 5%;
+    z-index: -1;
+}
+.ac-work-process-left {
+    &:is(.mt-30){
+        @media #{$xl} {
+            // margin-top: 90px;
+        }
+        @media #{$lg,$md,$xs} {
+            margin-top: 0;
+        }
+    }
+}
+.ac-work-process-right-wrapper  {
+    &:is(.ml-70){
+        @media #{$xl,$lg} {
+            margin-left: 30px;
+        }
+        @media #{$lg} {
+            margin-top: 50px;
+            margin-left: 30px;
+        }
+        @media #{$md} {
+            margin-left: 0px;
+            margin-top: 70px;
+        }
+        @media #{$xs} {
+            margin-left: 0px;
+            margin-top: 70px;
+        }
+    }
+}
+
+.ac-work-process-section-title-wrapper p br {
+    @media #{$xl,$lg,$md,$xs} {
+        display: none;
+    }
+
+}
+
+.ac-work-process-left-item {
+
+    img {
+        margin-top: -5px;
+        margin-right: 15px;
+
+        @media #{$xs} {
+            margin-right: 5px;
+        }
+        @media #{$sm} {
+            margin-right: 15px;
+        }
+    }
+    h4 {
+        margin-bottom: 10px;
+        color: var(--yollow-deep);
+        line-height: 34px;
+
+        @media #{$xs} {
+            font-size: 18px;
+        }
+        @media #{$sm} {
+            font-size: 24px;
+        }
+    }
+}
+
+.ac-work-process-left.content-wrapper {
+    display: inline-block;
+    text-align: center;
+    background-color: #FFFAF2;
+    padding: 18px;
+    border-radius: 5px;
+    @include transition(.3s);
+
+    &:not(:last-child) {
+        margin-bottom: 30px;
+        margin-right: 18px;
+
+        @media #{$lg} {
+            margin-bottom: 0px;
+        }
+
+        @media #{$xs} {
+            margin-right: 10px;
+        }
+        @media #{$sm} {
+            margin-right: 18px;
+        }
+    }
+
+    a {
+        display: block;
+        font-size: 16px;
+        font-family: $unna;
+        line-height: 26px;
+        color: var(--yollow-deep);
+    }
+    svg {
+        display: inline-block;
+        margin-bottom: 13px;
+    }
+
+    &:hover {
+        background-color: var(--yollow-deep);
+        a {
+            color: var(--white-color);
+        }
+        #Path_25732,#Path_25733,#Path_25734,#Path_25735,#Path_25736,#Path_25737,#Path_25738,#Path_25739,#Path_25740,#Path_25741,#Path_25742,#Path_25728,#Path_25729,#Path_25730,#Path_25731,#Path_25727,#Path_25745,#Path_25746,#Path_25747,#Path_25748,#Path_25749,#Path_25750,#Path_25751,#Path_25752,#Path_25753,#Path_25754,#Path_25755,#Path_25756,#Path_25757 {
+            fill: var(--white-color);
+            @include transition(.3s);
+        }
+    }
+}
+
+.ac-work-process-right-video-img {
+    position: relative;
+
+    &::after {
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background-color: #000;
+        opacity: .3;
+        border-radius: 10px;
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+        object-fit: cover;
+    }
+}
+.ac-work-process-right-play-btn {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    z-index: 1;
+
+    &:hover {
+        .ac-play-btn {
+            background-color: var(--hover-color-3);
+            color: var(--white-color);
+        }
+    }
+
+}

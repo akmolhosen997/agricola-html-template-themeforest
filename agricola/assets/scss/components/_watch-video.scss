@@ -1,0 +1,225 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+@use '../abstracts/common' as *;
+
+/*
+************
+*************************
+07. watch video
+******************************************************* 
+*************************************************************** */
+
+// ac watch video 1
+.ac-watch-video-bg {
+    position: relative;
+
+    @media #{$md,$sm,$xs} {
+        background-color: var(--theme_color);
+    }
+}
+
+.ac-watch-video-bg-shape-wrapper {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    .ac-watch-video-bg-shape {
+        position: absolute;
+        z-index: 1;
+        top: 30%;
+        left: 50%;
+        @media #{$xs} {
+                left: 0;
+        }
+    }
+}
+.ac-watch-video-wrapper {
+    background-color: var(--theme_color);
+    position: relative;
+    border-radius: 0px 10px 10px 0px;
+    
+    &::after{
+        position: absolute;
+        content: "";
+        background-color: var(--theme_color);
+        width: 100%;
+        height: 100%;
+        top: 0;
+        right: 100%;
+    }
+}
+.ac-watch-video-content {
+    position: relative;
+    z-index: 7;
+
+    @media #{$xl,$lg} {
+        padding-right: 30px;
+    }
+}
+.ac-watch-video-slide-active .swiper-wrapper .swiper-slide {
+
+    @media #{$md} {
+        width: 201px !important;
+    }
+
+}
+.ac-watch-video-slide-active .swiper-wrapper .swiper-slide {
+
+    @media #{$md} {
+        width: 201px !important;
+    }
+    @media #{$xs} {
+        width: 201px !important;
+    }
+    @media #{$sm} {
+        width: 201px !important;
+    }
+
+}
+.ac-watch-video-items {
+    img {
+        width: 100%;
+        border-radius: 5px;
+    }
+}
+.ac-watch-video-items {
+    position: relative;
+    img {
+        width: 100%;
+        height: 100%;
+        border-radius: 5px;
+        object-fit: cover;
+    }
+
+    &::before{
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        background-color: #00000036;
+        border-radius: 5px;
+        @include transition(.3s);
+
+    }
+    &::after{
+        position: absolute;
+        content: "\f04b";
+        width: 35px;
+        font-family: "Font Awesome 5 Pro";
+        font-weight: 700;
+        height: 35px;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        top: 50%;
+        background-color: var(--white-color);
+        border-radius: 50%;
+        font-size: 14px;
+        text-align: center;
+        line-height: 35px;
+        color: var(--theme_color);
+        cursor: pointer;
+        @include transition(.3s);
+
+    }
+    &:hover::after {
+        color: var(--hover-color-2);
+    }
+}
+.ac-watch-video-right-area {
+    display: inline-block;
+    position: absolute;
+    right: 0px;
+    width: 100%;
+    top: 130px;
+
+    @media #{$md} {
+        position: unset;
+        margin-top: -82px;
+        padding-bottom: 130px;
+    }
+    @media #{$xs} {
+        position: unset;
+        margin-top: -82px;
+        padding-bottom: 130px;
+    }
+    @media #{$sm} {
+        position: unset;
+        margin-top: -82px;
+        padding-bottom: 130px;
+    }
+}
+.ac-watch-video-right-content {
+    position: relative;
+    width: 100%;
+    height: 480px;
+
+    @media #{$lg} {
+        height: 340px;
+        margin-top: 120px;
+    }
+    @media #{$md} {
+        height: 350px;
+    }
+    @media #{$xs} {
+        height: 250px;
+    }
+    @media #{$sm} {
+        height: 350px;
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+
+    &::before{
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        background-color: #00000036;
+        border-radius: 10px;
+        @include transition(.3s);
+
+    }
+    &:hover::after {
+        color: var(--hover-color-2);
+    }
+}
+.ac-watch-video-slide-btn {
+
+    i {
+        display: inline-block;
+        font-size: 20px;
+        width: 40px;
+        height: 40px;
+        border: 1px solid var(--white-color);
+        color: var(--white-color);
+        border-radius: 50%;
+        text-align: center;
+        line-height: 38px;
+        margin-right: 15px;
+        cursor: pointer;
+        @include transition(.3s);
+
+        &:hover {
+            border-color: var(--hover-color-2);
+            background-color: var(--hover-color-2);
+            
+        }
+    }
+}
+.ac-watch-video-slide-btn-wrapper-2 {
+    @media #{$xs,$sm,$md} {
+        text-align: center;
+        margin-bottom: 50px;
+    }
+
+}

@@ -1,0 +1,131 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+@use '../abstracts/common' as *;
+
+/*
+************
+*************************
+22. brand
+******************************************************* 
+*************************************************************** */
+
+// brand
+.ac-brand-area {
+    border-top: 1px solid #e9e9e9;
+}
+
+.ac-brand-slide-item-wrapper {
+    text-align: center;
+
+    img {
+        display: inline-block;
+        margin-bottom: 18px;
+        @include transition(.3s);
+
+
+    }
+    a {
+        font-size: 24px;
+        line-height: 34px;
+        display: block;
+        font-family: $unna;
+        font-weight: 700;
+        color: var(--theme_color);
+
+        &:hover {
+            color: var(--hover-color-2);
+        }
+    }
+    span {
+        display: block;
+        font-size: 14px;
+        line-height: 24px;
+    }
+
+    &:hover {
+        img {
+            filter: saturate(0%);
+        }
+    }
+}
+
+// brand-2
+
+.ac-brand-2-area {
+    position: relative;
+}
+
+.ac-brand-2-bg-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+
+    span {
+        color: #cccccc;
+        font-size: 160px;
+        line-height: 170px;
+        font-family: $unna;
+        font-weight: 700;
+        opacity: .1;
+
+        @media #{$md} {
+            font-size: 100px;
+        }
+        @media #{$xs} {
+            font-size: 45px;
+        }
+        @media #{$sm} {
+            font-size: 70px;
+        }
+    }
+}
+.ac-brand-2-item  {
+
+    a {
+        display: inline-block;
+    }
+}
+.ac-brand-2-wrapper {
+    .ac-brand-2-slide-active {
+        .swiper-wrapper {
+            .swiper-slide {
+                &:is(.swiper-slide-active) {
+                    .ac-brand-2-item svg path {
+                        fill: var(--yollow-deep);
+                    }
+                }
+            }
+        }
+    }
+}
+.ac-brand-2-item {
+    &:hover {
+        svg path {
+            fill: var(--yollow-deep);
+        }
+    }
+}
+.faq-page {
+    .ac-brand-2-slide-active {
+        .swiper-wrapper {
+            .swiper-slide {
+                &:is(.swiper-slide-active) {
+                    .ac-brand-2-item svg path {
+                        fill: var(--theme_color);
+                    }
+                }
+            }
+        }
+    }
+    .ac-brand-2-item {
+        &:hover {
+            svg path {
+                fill: var(--theme_color);
+            }
+        }
+    }
+}

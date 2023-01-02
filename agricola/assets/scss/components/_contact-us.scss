@@ -1,0 +1,145 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+@use '../abstracts/common' as *;
+
+/*
+************
+*************************
+21. contact us
+******************************************************* 
+*************************************************************** */
+
+// contact us page
+
+.ac-contact-page-social-link {
+    ul {
+        li {
+            display: inline-block;
+            margin-right: 10px;
+            a {
+                display: inline-block;
+                width: 45px;
+                height: 45px;
+                border-radius: 50%;
+                text-align: center;
+                background: #f6f4ec;
+                color: var(--theme_color);
+                line-height: 45px;
+
+                &:hover {
+                    background-color: var(--theme_color);
+                    color: var(--white-color);
+                }
+            }
+        }
+    }
+}
+.comment-form-input-box {
+
+    input{
+        height: 70px;
+        width: 100%;
+        border: none;
+        background: #f6f4ec;
+        padding: 0 30px;
+        margin-bottom: 20px;
+        border-radius: 5px;
+        outline: none;
+        font-size: 16px;
+        color: var(--theme_color);
+        font-weight: 400;
+        text-transform: capitalize;
+        font-family: $unna;
+
+        &::placeholder {
+            color: rgb(136, 136, 136);
+            font-size: 16;
+            font-weight: 400;
+            font-family: $unna;
+        }
+    }
+    textarea {
+        font-size: 16px;
+        color: var(--theme_color);
+        height: 190px;
+        width: 100%;
+        background: #f6f4ec;
+        padding: 18px 30px 30px;
+        border: none;
+        border-radius: 5px;
+        outline: none;
+        margin-bottom: 30px;
+        font-weight: 400;
+        text-transform: capitalize;
+
+        &::placeholder {
+            color: rgb(136, 136, 136);
+            font-size: 16;
+            font-weight: 400;
+            font-family: $unna;
+        }
+    }
+}
+.ac-contact-page-left {
+    .section-title-wrapper {
+        &:is(.pr-60){
+            @media #{$xl} {
+                padding-right: 30px;
+            }
+            @media #{$lg,$xs} {
+                padding-right: 0px;
+            }
+        }
+    }
+}
+.ac-contact-map {
+    width: 100%;
+    height: 400px;
+
+    iframe {
+        width: 100%;
+        height: 100%;
+    }
+}
+.ac-contact-address {
+    background-color: #F6F6E8;
+}
+.ac-contact-address-wrapper {
+        display: flex;
+        align-items: center;
+        
+        @media #{$md,$xs} {
+            margin-bottom: 30px;
+        }
+
+        .icon {
+            width: 60px;
+            height: 60px;
+            background-color: var(--theme_color);
+            border-radius: 50%;
+            text-align: center;
+            line-height: 60px;
+            font-size: 20px;
+            color: var(--white-color);
+            @include transition(.5s);
+            margin-right: 20px;
+        }
+        .title {
+            span {
+                font-size: 18px;
+                font-weight: 700;
+                font-family: $unna;
+                color: var(--theme_color);
+            }
+            p {
+                margin: 0;
+            }
+        }
+
+        &:hover {
+            .icon {
+                background-color: var(--white-color);
+                color: var(--theme_color);
+            }
+        }
+}

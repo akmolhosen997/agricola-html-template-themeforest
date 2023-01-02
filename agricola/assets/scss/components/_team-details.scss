@@ -1,0 +1,226 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+@use '../abstracts/common' as *;
+
+/*
+************
+*************************
+17. team details
+******************************************************* 
+*************************************************************** */
+
+// team-details
+
+.ac-team-details-img {
+    width: 100%;
+    height: 500px;
+    border-radius: 10px;
+    position: relative;
+
+    @media #{$md} {
+        margin-bottom: 55px;
+    }
+    @media #{$xs} {
+        margin-bottom: 55px;
+        height: 350px;
+    }
+    @media #{$sm} {
+        margin-bottom: 55px;
+        height: 500px;
+    }
+    img {
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+        object-fit: cover;
+    }
+    &::after {
+        position: absolute;
+        content: "";
+        width: 50px;
+        height: 100%;
+        background: var(--yollow_color);
+        opacity: .1;
+        left: 0;
+        top: 0;
+        border-radius: 10px;
+        animation: color_grident linear infinite 20s;
+        @media #{$xs} {
+            display: none;
+        }
+        @media #{$sm} {
+            display: block;
+        }
+    }
+    &::before {
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 50px;
+        background: var(--theme_color);
+        opacity: .1;
+        left: 0;
+        top: 0;
+        border-radius: 10px;
+        animation: color_grident-2 linear infinite 20s;
+        @media #{$xs} {
+            display: none;
+        }
+        @media #{$sm} {
+            display: block;
+        }
+    }
+}
+
+@keyframes color_grident {
+    0%{
+        left: 92%;
+
+    }
+    50%{
+        left: 0%;
+    }
+    100%{
+        left: 92%;
+    }
+  
+}
+@keyframes color_grident-2 {
+    0%{
+        top: 92%;
+        @media #{$xs} {
+            top: 85%;
+        }
+    }
+    50%{
+        top: 0%;
+    }
+    100%{
+        top: 92%;
+        @media #{$xs} {
+            top: 85%;
+        }
+    }
+  
+}
+.ac-team-details-content{
+    &:is(.pl-40){
+        @media #{$lg,$md,$xs} {
+            padding-left: 19px;
+        }
+        @media #{$md,$xs} {
+            padding-left: 0px;
+        }
+    }
+}
+.ac-team-details-area {
+    &:is(.pb-130){
+        @media #{$md,$xs} {
+            padding-bottom: 105px;
+        } 
+    }
+}
+.ac-team-details-name {
+    line-height: 1;
+    font-size: 48px;
+    font-weight: 700;
+    font-family: $unna;
+    color: var(--theme_color);
+    margin-bottom: 26px;
+
+    @media #{$lg} {
+        font-size: 42px;
+    }
+    @media #{$md} {
+        font-size: 38px;
+    }
+    @media #{$xs} {
+        font-size: 30px;
+    }
+    
+    @media #{$sm} {
+        font-size: 34px;
+    }
+   
+}
+.ac-team-details-postion {
+    line-height: 1;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 18px;
+    position: relative;
+    display: inline-block;
+    margin-bottom: 37px;
+
+    &::after {
+        position: absolute;
+        content: "";
+        width: 50px;
+        height: 2px;
+        background-color: var(--theme_color);
+        top: 50%;
+        right: -80px;
+        transform: translate(-50%, -50%);
+        animation: sping linear infinite 5s;
+    }
+}
+
+@keyframes sping {
+    0%{
+        background-color: var(--yollow_color);
+    }
+    50%{
+        background-color: var(--theme_color);
+    } 
+    100%{
+        background-color: var(--yollow_color);
+    }
+}
+.ac-team-details-social {
+    margin-bottom: 30px;
+
+    li {
+        list-style: none;
+        display: inline-block;
+        a {
+            font-size: 16px;
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background-color: #F6F6E8;
+            color: var(--font_gray);
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            margin-right: 15px;
+
+            &:hover {
+                color: var(--white-color);
+                background-color: var(--theme_color);
+            }
+        }
+    }
+}
+.ac-team-details-highlight {
+    font-size: 26px;
+    font-weight: 700;
+    font-family: $unna;
+    padding-right: 150px;
+    line-height: 30px;
+    @media #{$lg} {
+        padding-right: 50px;
+    }
+    @media #{$xs} {
+        padding-right: 0px;
+    }
+}
+.ac-team-details-text{
+    p {
+        font-size: 18px;
+    }
+}
+.ac-getintouch-area {
+    .section-title-wrapper {
+        border-top: 1px solid #E8E8E8;
+    }
+}

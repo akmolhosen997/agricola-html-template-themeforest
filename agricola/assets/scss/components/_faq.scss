@@ -1,0 +1,92 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+@use '../abstracts/common' as *;
+
+
+// faq - 1
+
+.ac-faq-section-title-wrapper {
+
+    .ac-section-subtitle-2 {
+        text-transform: uppercase;
+    }
+}
+
+.ac-faq-section-title-wrapper {
+    p {
+        br{
+            @media #{$xl,$lg,$md,$xs} {
+                display: none;
+            }
+        }
+    }
+}
+
+.ac-faq-right {
+    @media #{$md,$xs} {
+        margin-bottom: 60px;
+    }
+   
+}
+
+.ac-faq-right-text-box {
+    border: 1px solid var(--yollow-deep);
+    border-radius: 5px;
+    margin-bottom: 30px;
+
+    .ac-faq-right-text-title {
+        .accordion-button {
+            color: var(--yollow-deep);
+            border: none;
+            font-size: 24px;
+            font-weight: 700;
+            line-height: 1.41;
+            font-family: "Unna", serif;
+            background-color: transparent;
+            box-shadow: none;
+            padding: 20px 30px;
+
+            @media #{$lg} {
+                font-size: 22px;
+            }
+            @media #{$xs} {
+                font-size: 20px;
+            }
+            @media #{$sm} {
+                font-size: 24px;
+            }
+
+            &::after {
+                flex-shrink: 0;
+                margin-left: auto;
+                height: 100%;
+                content: "\f067";
+                font-family: "Font Awesome 5 Pro";
+                background-image: unset;
+                font-weight: 300;
+                background-size: unset;
+                transition: transform 0.2s ease-in-out;
+            }
+            &:not(.collapsed)::after {
+                content: "\f068";
+            }
+        }
+    }
+    .ac-faq-right-text {
+        padding-left: 30px;
+        padding-right: 30px;
+        margin-bottom: 22px;
+        margin-top: -8px;
+        font-size: 16px;
+        line-height: 26px;
+        color: var(--font_gray);
+    }
+}
+
+// ac-faq page
+
+.ac-faq-page {
+    .ac-faq-right-text-box {
+        border: 1px solid var(--theme_color);
+    }
+}
